@@ -7,3 +7,14 @@
 Проверить точность модели по тестовой выборке
 3. Построить модель с использованием полиномиальной функции пример. Построить графики зависимости точности на обучающей и тестовой выборке от степени полиномиальной функции.
 4. Построить модель с использованием регуляризации пример. На основе экспериментов подобрать параметры для регуляризации. Построить графики зависимости точности модели на обучающей и тестовой выборках от коэффициента регуляризации.
+## Вариант 18
+Gas Sensor Array Drift Dataset at Different Concentrations
+
+## Загрузка dataset
+```
+gas_sensor_array_drift_at_different_concentrations = fetch_ucirepo(id=270)
+
+X_df = gas_sensor_array_drift_at_different_concentrations.data.features.copy()
+y_df = gas_sensor_array_drift_at_different_concentrations.data.targets.copy()
+```
+X_df - Features, Признаки. y_df - Targets, Цели
