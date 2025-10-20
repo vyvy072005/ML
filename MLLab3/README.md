@@ -12,6 +12,7 @@ Gas Sensor Array Drift Dataset at Different Concentrations
 
 ## Загрузка dataset
 ```
+from ucimlrepo import fetch_ucirepo
 gas_sensor_array_drift_at_different_concentrations = fetch_ucirepo(id=270)
 
 X_df = gas_sensor_array_drift_at_different_concentrations.data.features.copy()
