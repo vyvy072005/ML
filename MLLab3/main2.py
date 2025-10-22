@@ -101,7 +101,7 @@ print(f"Coefficient of determination TRAIN: {r2_score(y_train, y_train_pred):.2f
 print(f"Coefficient of determination TEST: {r2_score(y_test, y_test_pred):.2f}")
 
 
-plt.figure(figsize=(8, 6)) # Создаем фигуру для лучшего контроля размера
+plt.figure(figsize=(8, 6)) 
 plt.scatter(y_test, y_test_pred, color="black", alpha=0.6, label="Фактические vs. Прогноз")
 
 
@@ -145,7 +145,7 @@ plt.legend()
 plt.grid(True)
 plt.show()
 
-degree = 2  # степень полинома
+degree = 2  
 alphas = np.logspace(-4, 3, 10)  # диапазон коэффициентов регуляризации
 
 r2_train_list = []
@@ -165,17 +165,17 @@ for alpha in alphas:
     y_train_pred = pipeline.predict(X_train)
     y_test_pred = pipeline.predict(X_test)
 
-    # R² 
+    # R^2
     r2_train_list.append(r2_score(y_train, y_train_pred))
     r2_test_list.append(r2_score(y_test, y_test_pred))
 
 plt.figure(figsize=(8,5))
-plt.semilogx(alphas, r2_train_list, marker='o', label="Train R²")
-plt.semilogx(alphas, r2_test_list, marker='o', label="Test R²")
+plt.semilogx(alphas, r2_train_list, marker='o', label="Train R^2")
+plt.semilogx(alphas, r2_test_list, marker='o', label="Test R^2")
 plt.xlabel("Alpha (коэффициент регуляризации)")
-plt.ylabel("R²")
+plt.ylabel("R^2")
 plt.title(f"Ridge Regression (Polynomial degree={degree})")
-plt.ylim(0,1)  # шаг 0.2 можно регулировать через plt.yticks
+plt.ylim(0,1)  
 plt.grid(True)
 plt.legend()
 plt.show()
@@ -184,4 +184,5 @@ best_index = np.argmax(r2_test_list)
 best_alpha = alphas[best_index]
 
 print(f"Наилучший alpha: {best_alpha:.4f}")
+
 
