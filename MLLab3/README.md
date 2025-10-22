@@ -138,8 +138,8 @@ plt.show()
 ![alt text](Figure_2.png)
 
 ```
-degree = 2  # степень полинома
-alphas = np.logspace(-4, 3, 10)  # диапазон коэффициентов регуляризации
+degree = 2  
+alphas = np.logspace(-4, 3, 10)  # коэффициенты регуляризации
 
 r2_train_list = []
 r2_test_list = []
@@ -158,15 +158,15 @@ for alpha in alphas:
     y_train_pred = pipeline.predict(X_train)
     y_test_pred = pipeline.predict(X_test)
 
-    # R² 
+    # R^2
     r2_train_list.append(r2_score(y_train, y_train_pred))
     r2_test_list.append(r2_score(y_test, y_test_pred))
 
 plt.figure(figsize=(8,5))
-plt.semilogx(alphas, r2_train_list, marker='o', label="Train R²")
-plt.semilogx(alphas, r2_test_list, marker='o', label="Test R²")
+plt.semilogx(alphas, r2_train_list, marker='o', label="Train R^2")
+plt.semilogx(alphas, r2_test_list, marker='o', label="Test R^2")
 plt.xlabel("Alpha (коэффициент регуляризации)")
-plt.ylabel("R²")
+plt.ylabel("R^2")
 plt.title(f"Ridge Regression (Polynomial degree={degree})")
 plt.ylim(0,1)  # шаг 0.2 можно регулировать через plt.yticks
 plt.grid(True)
