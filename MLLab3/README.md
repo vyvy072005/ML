@@ -168,7 +168,7 @@ plt.semilogx(alphas, r2_test_list, marker='o', label="Test R^2")
 plt.xlabel("Alpha (коэффициент регуляризации)")
 plt.ylabel("R^2")
 plt.title(f"Ridge Regression (Polynomial degree={degree})")
-plt.ylim(0,1)  # шаг 0.2 можно регулировать через plt.yticks
+plt.ylim(0,1) 
 plt.grid(True)
 plt.legend()
 plt.show()
