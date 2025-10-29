@@ -43,3 +43,25 @@ scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 ```
+## Обучение Perceptron и MLPClassifier
+```
+perceptron = Perceptron(max_iter=1000, random_state=42)
+perceptron.fit(X_train_scaled, y_train)
+y_pred_perceptron = perceptron.predict(X_test_scaled)
+accuracy_perceptron = accuracy_score(y_test, y_pred_perceptron)
+
+mlp = MLPClassifier(max_iter=1000, random_state=42)
+mlp.fit(X_train_scaled, y_train)
+y_pred_mlp = mlp.predict(X_test_scaled)
+accuracy_mlp = accuracy_score(y_test, y_pred_mlp)
+```
+## Проверка точности моделей
+```
+print(f"Точность Perceptron: {accuracy_perceptron:.4f}")
+print(f"Точность MLPClassifier: {accuracy_mlp:.4f}")
+```
+
+![alt text](Lab4.png)
+
+
+
