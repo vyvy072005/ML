@@ -63,5 +63,61 @@ print(f"Точность MLPClassifier: {accuracy_mlp:.4f}")
 
 ![alt text](Lab4.png)
 
+## Гиперпараметры для эксперимента
+hidden_layer_sizes - размеры скрытых слоев нейронной сети
+activation - функция активации (relu — функция Rectified Linear Unit, tanh — гиперболический тангенс)
+solver — алгоритм оптимизации (adam — адаптивный градиентный спуск, sgd — стохастический градиентный спуск)
+alpha — коэффициент регуляризации
+learning_rate_init — начальная скорость обучения
+```
+param_grid = {
+    'hidden_layer_sizes': [(50,), (100,), (50,50)],
+    'activation': ['relu', 'tanh'],
+    'solver': ['adam', 'sgd'],
+    'alpha': [0.0001, 0.001, 0.01],
+    'learning_rate_init': [0.001, 0.01, 0.1]
+}
+```
+## Подбор гиперпараметров для модели MLPClassifier с использованием метода перебора GridSearchCV
+scoring='accuracy' -  метрика, по которой оценивается качество модели
+cv=5 - стратегия кросс‑валидации (5‑fold). Данные делятся на 5 частей (фолдов). Для каждой комбинации гиперпараметров модель обучается 5 раз. каждый раз на 4 фолдах и валидируется на 1 оставшемся. Итоговый скор для комбинации — среднее из 5 валидационных скоров.
+Зачем??? -  чтобы оценить обобщающую способность модели и избежать переобучения.
+n_jobs=-1 - количество параллельных процессов для вычислений
+```
+grid_search = GridSearchCV(MLPClassifier(max_iter=1000, random_state=42),
+                           param_grid,
+                           scoring='accuracy',
+                           cv=5,
+                           n_jobs=-1)
+
+grid_search.fit(X_train_scaled, y_train)
+```
+## Вывод лучших параметров
+```
+print("Лучшие параметры:", grid_search.best_params_)
+print("Лучшая точность на валидационной выборке:", grid_search.best_score_)
+```
+
+![alt text](Lab4.png)
+
+
+## Визуализация
+
+```
+results = pd.DataFrame(grid_search.cv_results_)
+scores_mean = results['mean_test_score']
+params = results['params']
+
+plt.figure(figsize=(10, 6))
+plt.plot(scores_mean, marker='o')
+plt.xlabel('Эксперимент номер')
+plt.ylabel('Средняя точность')
+plt.title('Результаты перебора гиперпараметров')
+plt.show()
+```
+![alt text](Lab4.png)
+
+
+
 
 
