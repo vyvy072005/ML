@@ -46,7 +46,7 @@ print(f"Точность MLPClassifier: {accuracy_mlp:.4f}")
 param_grid = {
     'hidden_layer_sizes': [(50,), (100,), (50,50)],
     'activation': ['relu', 'tanh'],
-    'solver': ['adam', 'sgd'],
+    'solver': ['adam', 'sgd','gradient_descent'],
     'alpha': [0.0001, 0.001, 0.01],
     'learning_rate_init': [0.001, 0.01, 0.1]
 }
@@ -72,4 +72,5 @@ plt.plot(scores_mean, marker='o')
 plt.xlabel('Эксперимент номер')
 plt.ylabel('Средняя точность')
 plt.title('Результаты перебора гиперпараметров')
+
 plt.show()
