@@ -77,7 +77,7 @@ learning_rate_init — начальная скорость обучения
 param_grid = {
     'hidden_layer_sizes': [(50,), (100,), (50,50)],
     'activation': ['relu', 'tanh'],
-    'solver': ['adam', 'sgd', 'gradient_descent'],
+    'solver': ['adam', 'sgd', 'lbfgs'],
     'alpha': [0.0001, 0.001, 0.01],
     'learning_rate_init': [0.001, 0.01, 0.1]
 }
