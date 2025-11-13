@@ -95,6 +95,7 @@ plt.tight_layout()
 plt.show()
 ```
 ![alt text](2.png)
+![alt text](console1.png)
 
 ## Метод кластеризации - Agglomerative Clustering
 
@@ -133,6 +134,7 @@ plt.tight_layout()
 plt.show()
 ```
 ![alt text](3.png)
+![alt text](console2.png)
 
 
 
@@ -173,6 +175,7 @@ plt.tight_layout()
 plt.show()
 ```
 ![alt text](4.png)
+![alt text](console3.png)
 
 ## Визуализация лучших методов
 
@@ -216,3 +219,5 @@ best_method = max(scores, key=scores.get)
 print(f'Лучший метод кластеризации: {best_method} с коэффициентом {scores[best_method]:.3f}')
 ```
 ![alt text](5.png)
+![alt text](console4.png)
+
