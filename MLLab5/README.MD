@@ -57,6 +57,8 @@ def evaluate_clustering(model, data):
         score = -1
     return labels, score
 ```
+core_data — массив данных, для которых считается метрика.
+core_labels — метки кластеров для этих данных, то есть, к каким кластерам принадлежат точки.
 
 ## Метод кластеризации - KMeans
 
@@ -220,4 +222,5 @@ print(f'Лучший метод кластеризации: {best_method} с к�
 ```
 ![alt text](5.png)
 ![alt text](console4.png)
+
 
