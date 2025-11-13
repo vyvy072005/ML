@@ -13,4 +13,5 @@ AAAI 2014 Accepted Papers (Принятые документы AAAI 2014)
 
 ```
 
-![alt text][1.png]
+![alt text](1.png)
+
