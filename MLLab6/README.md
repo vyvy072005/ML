@@ -96,8 +96,9 @@ o	Dense(10, activation='softmax') — слой из 10 нейронов для �
 ```
 model.fit(train_data, train_labels, epochs=10, batch_size=64, validation_split=0.1)
 
-![alt text](cons_photo/10.png)
+
 ```
+![alt text](cons_photo/10.png)
 ## Сохранение модели
 ```
 model.save('cnn_cifar10_model.h5')
@@ -181,3 +182,4 @@ print(f"Предсказанный класс: {predicted_class_name} (номе�
 ![alt text](photo/ship2.png)
 
 ![alt text](cons_photo/6.png)
+
