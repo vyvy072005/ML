@@ -34,7 +34,7 @@ def load_cifar10_batch(file):
 train_data — массив изображений всех 50 тысяч обучающих примеров.
 train_labels — массив меток, соответствующих каждому изображению.
 ```
-path_to_cifar10 = 'cifar-10-batches-py/'  # замените на ваш путь
+path_to_cifar10 = 'cifar-10-batches-py/' 
 
 train_data_list = []
 train_labels_list = []
@@ -182,4 +182,5 @@ print(f"Предсказанный класс: {predicted_class_name} (номе�
 ![alt text](photo/ship2.png)
 
 ![alt text](cons_photo/6.png)
+
 
